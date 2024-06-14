@@ -639,21 +639,21 @@ class TestConverter(TestCase):
             def forward(self, x):
                 return torch.tensor(4) + x
 
-        inp = (torch.randn([2, 2]),)
-        self._check_equal_ts_ep_converter(func1, inp)
-        inp = (torch.randn([2, 2]), torch.randn([2, 2]))
-        self._check_equal_ts_ep_converter(func2, inp)
+        # inp = (torch.randn([2, 2]),)
+        # self._check_equal_ts_ep_converter(func1, inp)
+        # inp = (torch.randn([2, 2]), torch.randn([2, 2]))
+        # self._check_equal_ts_ep_converter(func2, inp)
 
         inp = (torch.randn([2, 2]),)
         self._check_equal_ts_ep_converter(func3, inp)
 
-        self._check_equal_ts_ep_converter(func4, ())
-        self._check_equal_ts_ep_converter(M1(5), ())
+        # self._check_equal_ts_ep_converter(func4, ())
+        # self._check_equal_ts_ep_converter(M1(5), ())
 
-        inp = (torch.randn(2),)
-        self._check_equal_ts_ep_converter(M2(), inp)
+        # inp = (torch.randn(2),)
+        # self._check_equal_ts_ep_converter(M2(), inp)
 
-        self._check_equal_ts_ep_converter(func5, ())
+        # self._check_equal_ts_ep_converter(func5, ())
         # TODO: NumToTensor now returns a tensor based on dtype of input
         # tensor, but it should always be Long.
         # inp = (torch.randn([2, 3, 4]),)

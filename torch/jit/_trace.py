@@ -1069,6 +1069,7 @@ def trace(
                 )
                 return
 
+            print("Errors out here", export, traced_result)
             if not analyze_ts_result_with_export_result(export, traced_result):
                 log_torch_jit_trace_exportability(
                     "trace",
